@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>VideoFlix</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body style="text-align:center">
+    <div style="text-align:center">
+      <button onclick="playPause()">Play/Pause</button>
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeNormal()">Normal</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="picture()">Picture</button>
+      <br /><br />
+      <video src="/movies/teste.mp4" id="video1" width="420" autoplay>
+        Desculpa, o seu navegador não suporta vídeos incorporados
+      </video>
+    </div>
+
+    <script>
+      var myVideo = document.getElementById("video1");
+
+      function playPause() {
+        if (myVideo.paused) myVideo.play();
+        else myVideo.pause();
+      }
+
+      function makeBig() {
+        myVideo.style = "width: 100%;";
+      }
+
+      function makeNormal() {
+        myVideo.style = "width: 50%;";
+      }
+
+      function makeSmall() {
+        myVideo.style = "width: 25%;";
+      }
+
+      function picture() {
+        myVideo.requestPictureInPicture();
+      }
+    </script>
+  </body>
+</html>
