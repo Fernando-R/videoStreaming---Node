@@ -1,6 +1,9 @@
 const fs = require("fs");
 const express = require("express");
 const app = express();
+
+var porta = process.env.PORT || 8080;
+
 app.get("/", (req, res) => {
   fs.readFile("./index.html", (err, html) => res.end(html));
 });
@@ -34,4 +37,4 @@ app.get("/movies/:movieName", (req, res) => {
     stream.on("error", streamErr => res.end(streamErr));
   });
 });
-app.listen(3000, () => console.log("VideoFlix Server!"));
+app.listen(porta, () => console.log("Rodando"));
